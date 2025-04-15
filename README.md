@@ -6,10 +6,10 @@ A customizable Flutter widget that separates the main button tap and dropdown ac
 
 ## ✨ Features
 
-- 🔘 Split tap and dropdown behavior
-- 🎯 Customizable child widget
-- 💻 Supports Android, iOS, and Web
-- 🧱 Easy to integrate into existing UIs
+- 🔘 Split tap and dropdown behavior  
+- 🎯 Customizable child widget  
+- 💻 Supports Android, iOS, and Web  
+- 🧱 Easy to integrate into existing UIs  
 
 ## 📦 Installation
 
@@ -18,8 +18,11 @@ Add this to your `pubspec.yaml`:
 ```yaml
 dependencies:
   split_dropdown_button: ^1.0.0
+```
 
+### Quick Example
 
+```dart
 🚀 Quick Example
 
 import 'dart:developer';
@@ -58,8 +61,11 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
+```
 
 🤝 Contributing
 
 Found a bug or want to improve this? PRs and issues are welcome. Let’s build together. 🙌
+
+
+
