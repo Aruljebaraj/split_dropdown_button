@@ -50,11 +50,11 @@ class SplitDropdownButton extends StatelessWidget {
                 BlocBuilder<SplitDropdownBloc, SplitDropdownState>(
                   builder: (context, state) {
                     String display = displayText; // default fallback
-                    String? selectedValue;
+                   // String? selectedValue;
 
                     if (state is SplitDropdownSelected) {
                       display = state.selectedValue;
-                      selectedValue = state.selectedValue;
+                      //selectedValue = state.selectedValue;
                     }
 
                     return TextButton.icon(
