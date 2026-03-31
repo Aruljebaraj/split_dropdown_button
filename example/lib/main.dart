@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           child: SplitDropdownButton(
             displayText: 'Pick a item',
             buttonColor: Colors.red,
-            prefixIcon: const Icon(Icons.ac_unit),
+            //prefixIcon: const Icon(Icons.ac_unit),
             suffixIcon: const Icon(
               Icons.keyboard_arrow_down_rounded,
               color: Colors.white,

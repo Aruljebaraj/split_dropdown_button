@@ -78,7 +78,7 @@ class SplitDropdownButton extends StatelessWidget {
                         ),
                       ),
                       icon: prefixIcon ??
-                          const Icon(Icons.list, color: Colors.white),
+                         null,
                       label: Text(
                         display,
                         style:
