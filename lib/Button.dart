@@ -92,7 +92,7 @@ class SplitDropdownButton extends StatelessWidget {
                 Container(
                   height: 40,
                   width: 1,
-                  color: dividerColor ?? Colors.white.withOpacity(0.5),
+                  color: dividerColor ?? Colors.white.withValues(alpha: 0.5),
                 ),
 
                 // Dropdown Arrow
