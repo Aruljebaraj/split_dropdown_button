@@ -8,3 +8,7 @@
 - Initial release of `split_dropdown_button`.
 - Features:
     - Custom Text
+## [1.0.1] - 2025-05-19
+- Initial release of `split_dropdown_button`.
+- Features:
+    - Minor Fixes
