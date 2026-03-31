@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'Bloc/splitDropdownBloc.dart';
-import 'Bloc/splitDropdownEvent.dart';
-import 'Bloc/splitDropdownState.dart';
+import 'Bloc/split_dropdown_bloc.dart';
+import 'Bloc/split_dropdown_event.dart';
+import 'Bloc/split_dropdown_state.dart';
 
 class SplitDropdownButton extends StatelessWidget {
   final List<String> options;

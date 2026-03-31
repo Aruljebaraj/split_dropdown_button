@@ -27,7 +27,7 @@ dependencies:
 
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:split_dropdown_button/Button.dart';
+import 'package:split_dropdown_button/button.dart';
 
 void main() {
   runApp(const MyApp());

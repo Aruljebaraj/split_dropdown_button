@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'splitDropdownEvent.dart';
-import 'splitDropdownState.dart';
+import 'split_dropdown_event.dart';
+import 'split_dropdown_state.dart';
 
 class SplitDropdownBloc extends Bloc<SplitDropdownEvent, SplitDropdownState> {
   SplitDropdownBloc() : super(SplitDropdownInitial()) {
