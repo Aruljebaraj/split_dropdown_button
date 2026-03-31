@@ -12,3 +12,7 @@
 - Initial release of `split_dropdown_button`.
 - Features:
     - Minor Fixes
+## [1.0.2] - 2026-03-31
+- patch release of `split_dropdown_button`.
+- Features:
+    - Minor Fixes
