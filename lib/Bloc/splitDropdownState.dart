@@ -4,12 +4,9 @@ class SplitDropdownInitial extends SplitDropdownState {}
 
 class SplitDropdownSelected extends SplitDropdownState {
   final String selectedValue;
-
   SplitDropdownSelected(this.selectedValue);
 }
 
-class SplitDropdownButtonPressed extends SplitDropdownState {
-  final String value;
+class SplitDropdownButtonPressedLoading extends SplitDropdownState {}
 
-  SplitDropdownButtonPressed(this.value);
-}
+class SplitDropdownButtonPressedSuccess extends SplitDropdownState {}

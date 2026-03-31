@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'Bloc/SplitDropdownBloc.dart';
-import 'Bloc/SplitDropdownEvent.dart';
-import 'Bloc/SplitDropdownState.dart';
+import 'Bloc/splitDropdownBloc.dart';
+import 'Bloc/splitDropdownEvent.dart';
+import 'Bloc/splitDropdownState.dart';
 
 class SplitDropdownButton extends StatelessWidget {
   final List<String> options;
@@ -12,16 +12,18 @@ class SplitDropdownButton extends StatelessWidget {
   final Color? dividerColor;
   final Icon? prefixIcon;
   final Icon? suffixIcon;
+  final String displayText;
 
   /// Callback when an item is selected from the dropdown
   final Function(String selected)? onSelected;
 
   /// Callback when the main button is pressed
-  final Function(String value)? onMainButtonPressed;
+  final Function()? onMainButtonPressed;
 
   const SplitDropdownButton({
     super.key,
     required this.options,
+    required this.displayText ,
     this.textStyle,
     this.buttonColor,
     this.dividerColor,
@@ -47,25 +49,26 @@ class SplitDropdownButton extends StatelessWidget {
               children: [
                 BlocBuilder<SplitDropdownBloc, SplitDropdownState>(
                   builder: (context, state) {
-                    String displayText = 'Select Item';
+                    String display = displayText; // default fallback
                     String? selectedValue;
 
                     if (state is SplitDropdownSelected) {
-                      displayText = state.selectedValue;
+                      display = state.selectedValue;
                       selectedValue = state.selectedValue;
                     }
 
                     return TextButton.icon(
                       onPressed: () {
-                        if (selectedValue != null) {
-                          onMainButtonPressed?.call(selectedValue);
-                        } else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('No value selected yet'),
-                            ),
-                          );
-                        }
+                        // if (selectedValue != null) {
+                        //   onMainButtonPressed?.call(selectedValue);
+                        // } else {
+                        //   ScaffoldMessenger.of(context).showSnackBar(
+                        //     const SnackBar(
+                        //       content: Text('No value selected yet'),
+                        //     ),
+                        //   );
+                        // }
+                        onMainButtonPressed?.call();
                       },
                       style: TextButton.styleFrom(
                         foregroundColor: Colors.white,
@@ -74,11 +77,12 @@ class SplitDropdownButton extends StatelessWidget {
                           vertical: 12,
                         ),
                       ),
-                      icon: prefixIcon ?? const Icon(Icons.list, color: Colors.white),
+                      icon: prefixIcon ??
+                          const Icon(Icons.list, color: Colors.white),
                       label: Text(
-                        displayText,
-                        style: textStyle ??
-                            const TextStyle(color: Colors.white),
+                        display,
+                        style:
+                            textStyle ?? const TextStyle(color: Colors.white),
                       ),
                     );
                   },
@@ -95,16 +99,16 @@ class SplitDropdownButton extends StatelessWidget {
                 PopupMenuButton<String>(
                   onSelected: (value) {
                     BlocProvider.of<SplitDropdownBloc>(context)
-                        .add(SelectItemEvent(value));
+                        .add(SelectItemEvent(selectedItem: value));
                     onSelected?.call(value);
                   },
                   itemBuilder: (context) => options
                       .map(
                         (opt) => PopupMenuItem(
-                      value: opt,
-                      child: Text(opt),
-                    ),
-                  )
+                          value: opt,
+                          child: Text(opt),
+                        ),
+                      )
                       .toList(),
                   icon: suffixIcon ??
                       const Icon(

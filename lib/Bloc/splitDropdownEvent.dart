@@ -3,11 +3,10 @@ abstract class SplitDropdownEvent {}
 class SelectItemEvent extends SplitDropdownEvent {
   final String selectedItem;
 
-  SelectItemEvent(this.selectedItem);
+  SelectItemEvent({required this.selectedItem});
 }
 
 class OnButtonPressEvent extends SplitDropdownEvent {
-  final String value;
-
-  OnButtonPressEvent(this.value);
+  final Future<void> Function() onPress;
+  OnButtonPressEvent({required this.onPress});
 }

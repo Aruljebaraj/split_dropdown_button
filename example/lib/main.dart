@@ -17,6 +17,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(title: const Text('Split Dropdown Example')),
         body: Center(
           child: SplitDropdownButton(
+            displayText: 'Pick a item',
+            buttonColor: Colors.red,
             prefixIcon: const Icon(Icons.ac_unit),
             suffixIcon: const Icon(
               Icons.keyboard_arrow_down_rounded,
@@ -26,8 +28,8 @@ class MyApp extends StatelessWidget {
             onSelected: (value) {
               log('Selected value: $value');
             },
-            onMainButtonPressed: (val) {
-              log(val);
+            onMainButtonPressed: () {
+              // log(val);
             },
           ),
         ),
